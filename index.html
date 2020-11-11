@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Copying Texts </title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <div class="container">
+
+
+      <textarea id="copyText" cols="60" rows="5">
+        Her eyes are as css code
+          Invert it as java code
+          Complex is k javascript
+          Crazy is as xml
+          Automatic k Python
+          As simple as HTML
+          Tired as php
+          Basic as C ++
+          Process and task as C #
+        </textarea>
+      <br/>
+<div class="btn">
+<button>copy </button><span class="tooltip">copied</span>
+</div>
+
+<textarea cols="60" id="pasteText" placeholder="Paste your copied content here.." rows="5">
+
+</textarea>
+    </div>
+    <script>
+    "use strict";
+
+var copyText = document.querySelector("#copyText");
+var pasteText = document.querySelector("#pasteText");
+var button = document.querySelector("button");
+var tooltip = document.querySelector(".tooltip");
+button.addEventListener("click", function () {
+  copyText.select();
+  pasteText.value = "";
+  tooltip.classList.add("show");
+  setTimeout(function () {
+    tooltip.classList.remove("show");
+  }, 700);
+
+  if (document.execCommand("copy")) {
+    pasteText.focus();
+  } else {
+    alert("Something went wrong!");
+  }
+});
+
+    </script>
+
+</body>
+
+
+    
